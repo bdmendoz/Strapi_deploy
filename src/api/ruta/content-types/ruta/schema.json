@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rutas",
+  "info": {
+    "singularName": "ruta",
+    "pluralName": "rutas",
+    "displayName": "ruta",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string"
+    },
+    "observaciones": {
+      "type": "string"
+    },
+    "productores": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::productor.productor",
+      "mappedBy": "ruta"
+    },
+    "recolecciones": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::recoleccion.recoleccion",
+      "mappedBy": "ruta"
+    },
+    "acopio": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::acopio.acopio",
+      "inversedBy": "rutas"
+    },
+    "recolector": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::recolector.recolector",
+      "inversedBy": "rutas"
+    }
+  }
+}

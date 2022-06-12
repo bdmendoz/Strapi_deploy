@@ -1,0 +1,99 @@
+{
+  "kind": "collectionType",
+  "collectionName": "recolectors",
+  "info": {
+    "singularName": "recolector",
+    "pluralName": "recolectors",
+    "displayName": "recolector",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "cedula": {
+      "type": "string"
+    },
+    
+    "primer_nombre": {
+      "type": "string"
+    },
+    "segundo_nombre": {
+      "type": "string"
+    },
+    "primer_apellido": {
+      "type": "string"
+    },
+    "segundo_apellido": {
+      "type": "string"
+    },
+    "fecha_nacimiento": {
+      "type": "date"
+    },
+    "lugar_nacimiento": {
+      "type": "string"
+    },
+    
+    "fecha_expedicion": {
+      "type": "date"
+    },
+    "lugar_expedicion": {
+      "type": "string"
+    },
+    "departamento": {
+      "type": "string"
+    },
+    "municipio": {
+      "type": "string"
+    },
+    "direccion": {
+      "type": "string"
+    },
+    "telefono": {
+      "type": "string"
+    },
+    "correo": {
+      "type": "string"
+    },
+    "estado": {
+      "type": "string"
+    },
+    "tipo_pago": {
+      "type": "string"
+    },
+    
+    
+    "tipo_cuenta": {
+      "type": "string"
+    },
+    "numero_cuenta": {
+      "type": "integer"
+    },
+    
+    "rutas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::ruta.ruta",
+      "mappedBy": "recolector"
+    },
+    "recorridos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::recorrido.recorrido",
+      "mappedBy": "recolector"
+    },
+    "ingresos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::ingreso.ingreso",
+      "mappedBy": "recolector"
+    },
+    "recolecciones": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::recoleccion.recoleccion",
+      "mappedBy": "recolector"
+    }
+  }
+}

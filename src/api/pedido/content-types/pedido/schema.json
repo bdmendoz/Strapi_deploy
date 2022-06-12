@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pedidos",
+  "info": {
+    "singularName": "pedido",
+    "pluralName": "pedidos",
+    "displayName": "pedido",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "fecha": {
+      "type": "date"
+    },
+    "estado": {
+      "type": "string"
+    },
+    "observaciones": {
+      "type": "string"
+    },
+    "productor": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::productor.productor",
+      "inversedBy": "pedidos"
+    },
+    "productos_pedidos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::producto-pedido.producto-pedido",
+      "mappedBy": "pedido"
+    }
+  }
+}

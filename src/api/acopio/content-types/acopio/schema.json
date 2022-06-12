@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "acopios",
+  "info": {
+    "singularName": "acopio",
+    "pluralName": "acopios",
+    "displayName": "acopio",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "codigo": {
+      "type": "string"
+    },
+    "nombre": {
+      "type": "string"
+    },
+    "direccion": {
+      "type": "string"
+    },
+    "observaciones": {
+      "type": "text"
+    },
+    "rutas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::ruta.ruta",
+      "mappedBy": "acopio"
+    },
+    "ingresos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::ingreso.ingreso",
+      "mappedBy": "acopio"
+    },
+    "ventas_leche": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::venta-leche.venta-leche",
+      "mappedBy": "acopio"
+    },
+    "operarios": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::operario.operario",
+      "mappedBy": "acopio"
+    },
+    "consolidados_leche": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::consolidado-leche.consolidado-leche",
+      "mappedBy": "acopio"
+    }
+  }
+}

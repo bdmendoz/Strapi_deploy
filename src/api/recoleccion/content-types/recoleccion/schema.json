@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "recolecciones",
+  "info": {
+    "singularName": "recoleccion",
+    "pluralName": "recolecciones",
+    "displayName": "recoleccion",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "cantidad_leche": {
+      "type": "integer"
+    },
+    "fecha": {
+      "type": "date"
+    },
+    "hora": {
+      "type": "time"
+    },
+    "observaciones": {
+      "type": "text"
+    },
+    "ruta": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::ruta.ruta",
+      "inversedBy": "recolecciones"
+    },
+    "recorrido": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::recorrido.recorrido",
+      "inversedBy": "recolecciones"
+    },
+    "productor": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::productor.productor",
+      "inversedBy": "recolecciones"
+    },
+    "recolector": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::recolector.recolector",
+      "inversedBy": "recolecciones"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bancos",
+  "info": {
+    "singularName": "banco",
+    "pluralName": "bancos",
+    "displayName": "banco"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    
+    "nombre_banco": {
+      "type": "string"
+    },
+    "codigo_banco": {
+      "type": "integer",
+      "unique": true,
+      "required": true
+    },
+    "observaciones": {
+      "type": "text"
+    },
+    "usuarios": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::usuario.usuario",
+      "mappedBy": "banco"
+    }
+  }
+}

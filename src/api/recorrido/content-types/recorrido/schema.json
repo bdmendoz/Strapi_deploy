@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "recorridos",
+  "info": {
+    "singularName": "recorrido",
+    "pluralName": "recorridos",
+    "displayName": "recorrido"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    
+    "fecha": {
+      "type": "date"
+    },
+    "id_recolector": {
+      "type": "integer"
+    },
+    "hora_inicio": {
+      "type": "time"
+    },
+    "observaciones": {
+      "type": "integer"
+    },
+    "recolecciones": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::recoleccion.recoleccion",
+      "mappedBy": "recorrido"
+    },
+    "recolector": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::recolector.recolector",
+      "inversedBy": "recorridos"
+    }
+  }
+}

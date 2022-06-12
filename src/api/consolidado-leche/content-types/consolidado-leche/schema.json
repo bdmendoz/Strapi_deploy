@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "consolidados_leche",
+  "info": {
+    "singularName": "consolidado-leche",
+    "pluralName": "consolidados-leche",
+    "displayName": "consolidado_leche"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "fecha": {
+      "type": "datetime"
+    },
+    "cantidad_inicial": {
+      "type": "integer"
+    },
+    "cantidad_recibida": {
+      "type": "integer"
+    },
+    "cantidad_vendida": {
+      "type": "integer"
+    },
+    "cantidad_calculada": {
+      "type": "integer"
+    },
+    "cantidad_final_dia": {
+      "type": "integer"
+    },
+    "diferencia": {
+      "type": "integer"
+    },
+    "observaciones": {
+      "type": "text"
+    },
+    "acopio": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::acopio.acopio",
+      "inversedBy": "consolidados_leche"
+    }
+  }
+}

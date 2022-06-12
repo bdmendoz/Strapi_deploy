@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "compartimentos",
+  "info": {
+    "singularName": "compartimento",
+    "pluralName": "compartimentos",
+    "displayName": "compartimento",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    
+    "numero_compartimento": {
+      "type": "integer"
+    },
+    "cantidad_leche": {
+      "type": "integer"
+    },
+    "temperatura": {
+      "type": "decimal"
+    },
+    "observaciones": {
+      "type": "text"
+    },
+    "venta_leche": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::venta-leche.venta-leche",
+      "inversedBy": "compartimentos"
+    },
+    "prueba": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::prueba.prueba"
+    }
+  }
+}

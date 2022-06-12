@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ventas_leche",
+  "info": {
+    "singularName": "venta-leche",
+    "pluralName": "ventas-leche",
+    "displayName": "venta_leche",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "id_venta_leche": {
+      "type": "uid"
+    },
+    "id_acopio": {
+      "type": "integer"
+    },
+    "id_cliente": {
+      "type": "integer"
+    },
+    "cantidad_leche": {
+      "type": "integer"
+    },
+    "fecha": {
+      "type": "date"
+    },
+    "hora": {
+      "type": "time"
+    },
+    "placa_vehiculo": {
+      "type": "string"
+    },
+    "observaciones": {
+      "type": "text"
+    },
+    "cliente": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::cliente.cliente",
+      "inversedBy": "ventas_leche"
+    },
+    "acopio": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::acopio.acopio",
+      "inversedBy": "ventas_leche"
+    },
+    "compartimentos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::compartimento.compartimento",
+      "mappedBy": "venta_leche"
+    }
+  }
+}

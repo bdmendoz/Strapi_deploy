@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "producto_pedidos",
+  "info": {
+    "singularName": "producto-pedido",
+    "pluralName": "producto-pedidos",
+    "displayName": "producto_pedido"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    
+    "cantidad": {
+      "type": "integer"
+    },
+    
+    "observaciones": {
+      "type": "text"
+    },
+    "producto_agricola": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::producto-agricola.producto-agricola",
+      "inversedBy": "productos_pedidos"
+    },
+    "pedido": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::pedido.pedido",
+      "inversedBy": "productos_pedidos"
+    }
+  }
+}

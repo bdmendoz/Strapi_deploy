@@ -1,0 +1,100 @@
+{
+  "kind": "collectionType",
+  "collectionName": "productores",
+  "info": {
+    "singularName": "productor",
+    "pluralName": "productores",
+    "displayName": "productor",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "codigo": {
+      "type": "integer"
+    },
+    "numero_documento": {
+      "type": "string"
+    },
+    "tipo_documento": {
+      "type": "string"
+    },
+    "fecha_expedicion": {
+      "type": "date"
+    },
+    "lugar_expedicion": {
+      "type": "string"
+    },
+    "primer_nombre": {
+      "type": "string"
+    },
+    "segundo_nombre": {
+      "type": "string"
+    },
+    "primer_apellido": {
+      "type": "string"
+    },
+    "segundo_apellido": {
+      "type": "string"
+    },
+    "fecha_nacimiento": {
+      "type": "date"
+    },
+    "lugar_nacimiento": {
+      "type": "string"
+    },
+    
+    "departamento": {
+      "type": "string"
+    },
+    "municipio": {
+      "type": "string"
+    },
+    "direccion": {
+      "type": "string"
+    },
+    "telefono": {
+      "type": "string"
+    },
+    "correo": {
+      "type": "string"
+    },
+    "estado": {
+      "type": "string"
+    },
+    "tipo_pago": {
+      "type": "string"
+    },
+    "tipo_cuenta": {
+      "type": "string"
+    },
+    "numero_cuenta": {
+      "type": "integer"
+    },
+    "ruta": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::ruta.ruta",
+      "inversedBy": "productores"
+    },
+    "recolecciones": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::recoleccion.recoleccion",
+      "mappedBy": "productor"
+    },
+    "pedidos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::pedido.pedido",
+      "mappedBy": "productor"
+    },
+    "banco": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::banco.banco"
+    }
+  }
+}

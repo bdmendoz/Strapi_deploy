@@ -1,0 +1,86 @@
+{
+  "kind": "collectionType",
+  "collectionName": "operarios",
+  "info": {
+    "singularName": "operario",
+    "pluralName": "operarios",
+    "displayName": "operario",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "cedula": {
+      "type": "string"
+    },
+    "primer_nombre": {
+      "type": "string"
+    },
+    "segundo_nombre": {
+      "type": "string"
+    },
+    "primer_apellido": {
+      "type": "string"
+    },
+    "segundo_apellido": {
+      "type": "string"
+    },
+    "fecha_nacimiento": {
+      "type": "date"
+    },
+    "lugar_nacimiento": {
+      "type": "string"
+    },
+    "fecha_expedicion": {
+      "type": "date"
+    },
+    "lugar_expedicion": {
+      "type": "string"
+    },
+    "departamento": {
+      "type": "string"
+    },
+    "municipio": {
+      "type": "string"
+    },
+    "direccion": {
+      "type": "string"
+    },
+    "telefono": {
+      "type": "string"
+    },
+    "correo": {
+      "type": "string"
+    },
+    "estado": {
+      "type": "string"
+    },
+    "tipo_pago": {
+      "type": "string"
+    },
+    "tipo_cuenta": {
+      "type": "string"
+    },
+    "numero_cuenta": {
+      "type": "integer"
+    },
+    "usuario": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::usuario.usuario"
+    },
+    "acopio": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::acopio.acopio",
+      "inversedBy": "operarios"
+    },
+    "banco": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::banco.banco"
+    }
+  }
+}
